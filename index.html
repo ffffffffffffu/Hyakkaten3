@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>御池百貨店 公式ウェブサイト | 創業112年・国登録有形文化財本館</title>
+  <meta name="description" content="大正三年創業。観光都市の超一等地に佇む国登録有形文化財「御池百貨店」。世界のハイブランドメゾン、ハイジュエリー、特選呉服、GLOBAL TAX-FREEのご案内。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+JP:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Zen Kaku Gothic New', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #faf9f6;
+      color: #1a1a1a;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    .serif { font-family: 'Noto Serif JP', serif; }
+    .cinzel { font-family: 'Cinzel', serif; }
+
+    :root {
+      --c-black: #12151a;
+      --c-gold: #c5a059;
+      --c-gold-dark: #997838;
+      --c-gold-light: #ecdcb9;
+      --c-cream: #faf9f6;
+      --c-card: #ffffff;
+      --c-crimson: #94292b;
+      --c-border: #e6e2d8;
+      --c-muted: #64748b;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    a { color: inherit; text-decoration: none; }
+
+    /* Top Multilingual Tax-Free Notice Bar */
+    .top-bar {
+      background: #0d1015;
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(197,160,89,0.3);
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .taxfree-pill {
+      background: var(--c-gold);
+      color: #0d1015;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      font-size: 0.6875rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Main Sticky Luxury Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--c-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      gap: 1.5rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+    }
+    .brand-crest {
+      width: 44px;
+      height: 44px;
+      background: #12151a;
+      color: var(--c-gold);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      border: 1px solid var(--c-gold);
+    }
+    .brand-text h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.45rem;
+      letter-spacing: 0.18em;
+      color: #12151a;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .brand-text span {
+      font-size: 0.625rem;
+      letter-spacing: 0.25em;
+      color: var(--c-gold-dark);
+      display: block;
+      font-weight: 600;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.75rem;
+      align-items: center;
+    }
+    nav a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #334155;
+      transition: color 0.2s;
+      letter-spacing: 0.05em;
+    }
+    nav a:hover {
+      color: var(--c-gold-dark);
+    }
+    .nav-btn {
+      background: #12151a;
+      color: var(--c-gold-light) !important;
+      padding: 0.5rem 1.1rem;
+      border-radius: 2px;
+      font-size: 0.75rem !important;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--c-gold);
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: #232933; color: #ffffff !important; }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: #0d1015;
+      color: #ffffff;
+      overflow: hidden;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.42;
+      filter: saturate(1.1);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: 4.5rem 0;
+    }
+    .hero-kicker {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      color: var(--c-gold-light);
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(197,160,89,0.5);
+      padding-bottom: 0.3rem;
+      text-transform: uppercase;
+    }
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2.85rem;
+      line-height: 1.35;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #e2e8f0;
+      margin-bottom: 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      background: var(--c-gold);
+      color: #12151a;
+      padding: 0.8rem 1.8rem;
+      font-weight: 700;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .btn-gold:hover { background: #d9b56f; }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #ffffff;
+      padding: 0.8rem 1.8rem;
+      font-weight: 600;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+    /* Heritage Status Bar */
+    .heritage-bar {
+      background: #12151a;
+      border-top: 1px solid rgba(197,160,89,0.4);
+      border-bottom: 1px solid rgba(197,160,89,0.4);
+      color: var(--c-gold-light);
+      padding: 1.25rem 0;
+    }
+    .heritage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      text-align: center;
+    }
+    .h-item h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.2rem;
+    }
+    .h-item p {
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      color: var(--c-gold-light);
+    }
+
+    /* Sections */
+    .section-padding { padding: 4.5rem 0; }
+    .bg-white { background-color: #ffffff; }
+    .bg-cream { background-color: #f7f5ed; }
+
+    .sec-head {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .sec-en {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      color: var(--c-gold-dark);
+      text-transform: uppercase;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .sec-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2rem;
+      color: #12151a;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .sec-sub {
+      color: var(--c-muted);
+      font-size: 0.9375rem;
+      margin-top: 0.75rem;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 2 & 3 Column Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .card-luxe {
+      background: #ffffff;
+      border: 1px solid var(--c-border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card-luxe:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    }
+    .card-img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 1.75rem; }
+    .card-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--c-gold-dark);
+      margin-bottom: 0.5rem;
+      display: block;
+      font-weight: 700;
+    }
+    .card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.25rem;
+      color: #12151a;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+    .card-text {
+      font-size: 0.875rem;
+      color: #475569;
+      line-height: 1.75;
+    }
+
+    /* Floor Directory Tabs */
+    .floor-tabs {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      padding-bottom: 0.75rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .floor-btn {
+      background: #ffffff;
+      border: 1px solid var(--c-border);
+      padding: 0.7rem 1.1rem;
+      border-radius: 2px;
+      font-weight: 700;
+      color: #12151a;
+      cursor: pointer;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .floor-btn.active, .floor-btn:hover {
+      background: #12151a;
+      color: var(--c-gold-light);
+      border-color: #12151a;
+    }
+    .floor-box {
+      background: #ffffff;
+      border: 1px solid var(--c-border);
+      border-radius: 4px;
+      padding: 2.25rem;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 2.5rem;
+    }
+    .floor-num {
+      font-family: 'Cinzel', serif;
+      font-size: 3.25rem;
+      font-weight: 700;
+      color: var(--c-gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Tax-Free Simulator Box */
+    .tax-box {
+      background: #12151a;
+      color: #ffffff;
+      border-radius: 4px;
+      padding: 2.5rem;
+      border: 1px solid var(--c-gold);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0d1015;
+      color: #94a3b8;
+      padding: 4.5rem 0 2rem;
+      border-top: 3px solid var(--c-gold);
+      font-size: 0.875rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-col h4 {
+      color: #ffffff;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.05em;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.625rem; }
+    .footer-col a:hover { color: var(--c-gold-light); text-decoration: underline; }
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 2rem;
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    @media (max-width: 900px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      nav ul { flex-wrap: wrap; gap: 0.75rem; }
+      .heritage-grid { grid-template-columns: repeat(2, 1fr); }
+      .tax-box { grid-template-columns: 1fr; }
+      .floor-box { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-title { font-size: 2.1rem; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .heritage-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Multilingual & Tax-Free Alert -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span class="taxfree-pill">GLOBAL TAX FREE</span>
+        <span>本館7階 免税手続き特設カウンター（英語・中国語・韓国語常駐通訳） ｜ 電子免税即時返金</span>
+      </div>
+      <div>
+        <span>ENGLISH · 简体中文 · 繁體中文 · 한국어 · 日本語 ｜ 地下鉄御池駅直結</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-crest">御</div>
+        <div class="brand-text">
+          <h1>御池百貨店</h1>
+          <span>OIKE GRAND DEPARTMENT STORE · 創業112年 · 国登録有形文化財</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#luxury">ラグジュアリーメゾン</a></li>
+          <li><a href="#taxfree">免税・TAX FREE</a></li>
+          <li><a href="#salon">VIP外商サロン</a></li>
+          <li><a href="#floors">全館フロア案内</a></li>
+          <li><a href="#heritage">文化財の歴史</a></li>
+          <li><a href="#company" class="nav-btn">企業情報・112年のあゆみ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1541447271487-09612b3f49f7?auto=format&fit=crop&w=1600&q=80" alt="御池百貨店 文化財本館外観" class="hero-img">
+    <div class="container hero-content">
+      <span class="hero-kicker cinzel">SINCE 1914 · REGISTERED TANGIBLE CULTURAL PROPERTY</span>
+      <h2 class="hero-title serif">
+        百十二年の美意識と、<br>
+        世界の最高峰が出逢う場所。
+      </h2>
+      <p class="hero-desc">
+        大正三年の呉服問屋創業から一世紀余。<br>
+        国登録有形文化財の重厚な石造り本館に、世界のスーパーラグジュアリーメゾンと伝統工芸の極みが集う、国際観光都市随一の格式を誇る老舗百貨店です。
+      </p>
+      <div class="hero-actions">
+        <a href="#luxury" class="btn-gold">世界のメゾン・ハイジュエリー</a>
+        <a href="#taxfree" class="btn-outline">免税手続きカウンターのご案内</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heritage Status Metrics Bar -->
+  <div class="heritage-bar">
+    <div class="container heritage-grid">
+      <div class="h-item">
+        <h4 class="cinzel">1914</h4>
+        <p>大正三年創業 · 呉服問屋「御池屋」</p>
+      </div>
+      <div class="h-item">
+        <h4 class="cinzel">CULTURAL</h4>
+        <p>昭和6年竣工 国登録有形文化財本館</p>
+      </div>
+      <div class="h-item">
+        <h4 class="cinzel">TOP TIER</h4>
+        <p>世界三大高級時計＆最高峰メゾン正規店</p>
+      </div>
+      <div class="h-item">
+        <h4 class="cinzel">18 DESKS</h4>
+        <p>本館7階 大型グローバル免税センター</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 1: Luxury & Heritage Showcase -->
+  <section id="luxury" class="section-padding bg-white">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-en">World-Class Luxury & Heritage</span>
+        <h3 class="sec-title">世界の最高峰メゾンと、百年の信頼</h3>
+        <p class="sec-sub">パリ・ジュネーブの名門メゾンとの100年に及ぶ絆。世界限定ピースの特別割当枠を誇るハイエンドフロア。</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card-luxe">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="ハイジュエリー・スイス時計サロン" class="card-img">
+          <div class="card-content">
+            <span class="card-kicker">本館4階 ｜ プレシャスウォッチサロン</span>
+            <h4 class="card-title">パテック フィリップ＆スイス高級時計</h4>
+            <p class="card-text">世界最高峰時計マニュファクチュールとの長年の絆が生む、限定コンプリケーションモデルの国内屈指の割当数。スイス公認時計技師が常駐し万全のメンテナンスをお約束します。</p>
+          </div>
+        </div>
+
+        <div class="card-luxe">
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80" alt="ラグジュアリーレザーメゾン" class="card-img">
+          <div class="card-content">
+            <span class="card-kicker">本館2階・3階 ｜ インターナショナルモード</span>
+            <h4 class="card-title">ルイ・ヴィトン・シャネル・エルメス</h4>
+            <p class="card-text">有形文化財の大理石空間に広がる世界最高峰メゾンの旗艦ブティック。最新ランウェイコレクションから希少レザーバッグ、トランクまで、国内最大級の品揃えを誇ります。</p>
+          </div>
+        </div>
+
+        <div class="card-luxe">
+          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" alt="創業のルーツ 特選呉服サロン" class="card-img">
+          <div class="card-content">
+            <span class="card-kicker">本館5階 ｜ 創業のルーツ</span>
+            <h4 class="card-title">特撰呉服サロン「千代田」と人間国宝工芸</h4>
+            <p class="card-text">創業112年の原点。京友禅、西陣織、本漆器、茶道家元御用達の茶道具まで、代々の目利きが厳選した日本の伝統美の極致を静謐な数寄屋空間でお仕立ていたします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Global Tax-Free & Inbound Reality -->
+  <section id="taxfree" class="section-padding bg-cream">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-en">Global Tax-Free Service</span>
+        <h3 class="sec-title">本館7階 グローバル免税手続きセンター</h3>
+        <p class="sec-sub">全18窓口・電子免税システム導入。多言語コンシェルジュがスムーズな還付手続きをご案内いたします。</p>
+      </div>
+
+      <div class="tax-box">
+        <div>
+          <span style="color: var(--c-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; display: block; margin-bottom: 0.5rem;" class="cinzel">
+            TAX-FREE PROCEDURE GUIDELINE
+          </span>
+          <h3 class="serif" style="font-size: 1.85rem; line-height: 1.4; margin-bottom: 1rem; color: #ffffff;">
+            当日のお買い上げ合計5,000円（税抜）以上で、<br>
+            消費税10%を即時現金またはカードへ還付。
+          </h3>
+          <p style="color: #cbd5e1; font-size: 0.875rem; line-height: 1.8; margin-bottom: 1.5rem;">
+            本館7階の特設センターでは、専任通訳（英語・中国語・韓国語）が常駐。お買い上げ当日中にパスポート（入国スタンプ要）とレシート、商品原本をご提示ください。
+          </p>
+          <ul style="list-style: none; font-size: 0.8125rem; color: #e2e8f0; line-height: 2;">
+            <li>✓ 自動免税発券機によるQR整理券呼出（スマホで待ち組数を確認可能）</li>
+            <li>✓ 液体物・化粧品の免税専用密閉袋（空港出国時まで未開封）の無料包装</li>
+            <li>✓ 成田・羽田・関西国際空港への当日手荷物配送サービス連携</li>
+          </ul>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 1.75rem;">
+          <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--c-gold-light); margin-bottom: 1rem;" class="serif">
+            免税還付額 試算ツール
+          </h4>
+          <div style="margin-bottom: 1rem;">
+            <label style="display: block; font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.3rem;">
+              本日のお買上げ合計金額（税込）
+            </label>
+            <select id="tf-amount" onchange="calcTaxFree()" style="width: 100%; padding: 0.5rem; border-radius: 2px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: #ffffff; font-size: 0.875rem;">
+              <option value="55000">55,000 円（コスメ・ファッション）</option>
+              <option value="330000" selected>330,000 円（ハイブランドバッグ）</option>
+              <option value="1100000">1,100,000 円（高級時計・宝飾品）</option>
+            </select>
+          </div>
+          <div style="background: rgba(0,0,0,0.3); padding: 1.25rem; border-radius: 4px; text-align: center;">
+            <span style="font-size: 0.75rem; color: #cbd5e1;">お客様への現金還付想定額（手数料1.55%引後）</span>
+            <div id="tf-refund" style="font-size: 1.85rem; font-weight: 700; color: var(--c-gold); margin: 0.25rem 0;" class="cinzel">
+              ¥25,500
+            </div>
+            <span style="font-size: 0.6875rem; color: #94a3b8;">※免税手数料（1.55%）を差し引いた金額が還付されます</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: VIP Salon & Local Heritage Contrast -->
+  <section id="salon" class="section-padding bg-white">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        <div>
+          <span style="color: var(--c-gold-dark); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;" class="cinzel">
+            Private VIP Sanctuary
+          </span>
+          <h3 class="serif" style="font-size: 2rem; color: #12151a; margin: 0.5rem 0 1.25rem; line-height: 1.4;">
+            喧騒を離れ、至高の静寂へ。<br>
+            お得意様貴賓室「サロン・ド・ロイヤル」
+          </h3>
+          <p style="color: #475569; font-size: 0.9375rem; line-height: 1.85; margin-bottom: 1.25rem;">
+            観光客の賑わいが広がる館内において、代々の上顧客（茶道・華道の家元、文化人、医療法人様）が心静かにお過ごしいただける特別サロン。
+            大正モダンのステンドグラスが柔らかな光を投げかける完全個室で、専任外商員がご要望の品を個別にお持ちいたします。
+          </p>
+          <div style="padding: 1rem; background: #faf9f6; border-left: 3px solid var(--c-gold); font-size: 0.8125rem; color: #334155;">
+            「外国人観光客の方で賑わうのは喜ばしいことですが、私どものように先祖代々お世話になっている者が落ち着いてお茶をいただけるこの場所があるからこそ、今も御池さんへ通っております。」（市内在住・華道家元様）
+          </div>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80" alt="御池百貨店 外商貴賓室サロン" style="width: 100%; height: 380px; object-fit: cover; border-radius: 4px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Interactive Floor Guide -->
+  <section id="floors" class="section-padding bg-cream">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-en">Floor Directory</span>
+        <h3 class="sec-title">全館フロアガイド（地下1階〜屋上）</h3>
+        <p class="sec-sub">国登録有形文化財の本館に広がる、格式高きお買い場と至福の空間。</p>
+      </div>
+
+      <div class="floor-tabs">
+        <button class="floor-btn" onclick="showOikeFloor('RF')">RF 屋上日本庭園</button>
+        <button class="floor-btn" onclick="showOikeFloor('7F')">7F 免税・VIPサロン</button>
+        <button class="floor-btn" onclick="showOikeFloor('6F')">6F 老舗料亭・特別食堂</button>
+        <button class="floor-btn" onclick="showOikeFloor('5F')">5F 特撰呉服・漆器</button>
+        <button class="floor-btn" onclick="showOikeFloor('4F')">4F 高級時計・宝飾</button>
+        <button class="floor-btn" onclick="showOikeFloor('3F')">3F インターナショナルモード</button>
+        <button class="floor-btn" onclick="showOikeFloor('2F')">2F メゾン・ルイヴィトン</button>
+        <button class="floor-btn active" onclick="showOikeFloor('1F')">1F 大理石コンコース・コスメ</button>
+        <button class="floor-btn" onclick="showOikeFloor('B1F')">B1F ごちそう回廊・デパ地下</button>
+      </div>
+
+      <div class="floor-box" id="of-box">
+        <div>
+          <div class="floor-num" id="of-num">1F</div>
+          <h4 id="of-title" class="serif" style="font-size: 1.4rem; color: #12151a; margin-bottom: 0.5rem; font-weight: 700;">
+            グランドコンコース・コスメティック＆フレグランス
+          </h4>
+          <p id="of-cat" style="font-size: 0.8125rem; font-weight: 700; color: var(--c-gold-dark); margin-bottom: 1rem;">
+            大理石回廊・世界のデパコス・免税特設ステーション
+          </p>
+          <p id="of-desc" style="font-size: 0.875rem; color: #475569; line-height: 1.8;">
+            国登録有形文化財の荘厳な吹き抜け大理石コンコース。世界最高峰のコスメ・香水ブランドがずらりと並び、国内外の買い物客で一日中大盛況を見せています。
+          </p>
+        </div>
+
+        <div>
+          <h5 style="font-size: 0.9375rem; font-weight: 700; color: #12151a; border-bottom: 2px solid var(--c-gold); padding-bottom: 0.4rem; margin-bottom: 1rem;">
+            主要ブランド・施設
+          </h5>
+          <ul id="of-shops" style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.875rem; color: #334155;">
+            <li>・CHANEL / DIOR / YSL コスメ</li>
+            <li>・SK-II / 資生堂 / クレ・ド・ポー ボーテ</li>
+            <li>・特選フレグランス（ル ラボ・ディプティック）</li>
+            <li>・正面案内所・多言語通訳デスク（4言語対応）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Architectural Heritage -->
+  <section id="heritage" class="section-padding bg-white">
+    <div class="container">
+      <div class="sec-head">
+        <span class="sec-en">Architectural Heritage</span>
+        <h3 class="sec-title">国登録有形文化財「御池百貨店本館」の建築美</h3>
+        <p class="sec-sub">昭和6年（1931年）竣工。世界的な建築賞にも輝いたネオ・ルネサンスの最高峰。</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto; line-height: 1.9; font-size: 0.9375rem; color: #334155;">
+        <p style="margin-bottom: 1.5rem;">
+          御池百貨店本館は、大正から昭和初期にかけての名建築家・武田五一の指導のもと建設された鉄骨鉄筋コンクリート造地上7階・地下2階の近代建築です。
+          古代ギリシャ・ローマの古典様式を基調に、大理石の大階段、天井を彩るステンドグラス、ブロンズ製の手摺りなど、職人の最高峰の技法が現代まで当時のまま息づいています。
+        </p>
+        <p style="margin-bottom: 1.5rem;">
+          現在では国内外の建築愛好家や観光客が写真撮影に訪れる観光名所となっており、夜間には温かみのある琥珀色のライトアップが古都の夜空を美しく染め上げます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4 style="font-size: 1.25rem;">株式会社 御池百貨店</h4>
+        <p style="margin-bottom: 0.75rem; line-height: 1.8;">
+          〒604-0001 ○○県観光都市御池通本町1丁目1番地<br>
+          代表電話：000-777-1914 ｜ 地下鉄御池駅直結<br>
+          大正三年創業 · 国登録有形文化財本館
+        </p>
+        <p style="font-size: 0.75rem; color: #64748b;">
+          日本百貨店協会加盟店 ｜ GLOBAL BLUE TAX FREE PARTNER
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>ラグジュアリーフロア</h4>
+        <ul>
+          <li><a href="#luxury">ルイ・ヴィトン / エルメス</a></li>
+          <li><a href="#luxury">シャネル / ディオール</a></li>
+          <li><a href="#luxury">パテック フィリップ</a></li>
+          <li><a href="#luxury">特撰呉服サロン「千代田」</a></li>
+          <li><a href="#floors">全館フロア案内</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>ゲストサービス</h4>
+        <ul>
+          <li><a href="#taxfree">本館7階 免税手続きセンター</a></li>
+          <li><a href="#taxfree">電子免税・自動発券機</a></li>
+          <li><a href="#salon">お得意様サロン・ド・ロイヤル</a></li>
+          <li><a href="#heritage">文化財建築ツアー</a></li>
+          <li><a href="#taxfree">手荷物一時預かり・ホテル配送</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>企業情報</h4>
+        <ul>
+          <li><a href="#">会社概要・112年のあゆみ</a></li>
+          <li><a href="#">文化財保存・地域貢献活動</a></li>
+          <li><a href="#">サステナビリティ調達指針</a></li>
+          <li><a href="#">採用情報（通訳・総合職）</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <p>&copy; 1914-2026 OIKE GRAND DEPARTMENT STORE CO., LTD. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const oikeFloors = {
+      'RF': {
+        num: 'RF',
+        title: '本館屋上 伝統庭園「御池スカイガーデン」',
+        cat: '日本庭園・茶室・重要文化財時計塔',
+        desc: '昭和6年竣工当時の大時計塔が聳え立つ屋上。観光客の喧騒を離れ、四季折々の苔庭や小川、数寄屋造りの茶室が佇む特別な静寂空間です。',
+        shops: ['・国登録有形文化財「御池大時計塔」', '・茶室「松籟庵（しょうらいあん）」', '・空中枯山水展望テラス', '・茶道体験ワークショップ']
+      },
+      '7F': {
+        num: '7F',
+        title: '免税カウンター・VIP外商サロン・画廊',
+        cat: 'GLOBAL TAX-FREE・外商貴賓室・美術画廊',
+        desc: '現在、館内で最も混雑するグローバル免税カウンター（全18窓口・自動免税機完備）。その隣奥には、地元名士や家元だけが入館できる厳重なセキュリティの「サロン・ド・ロイヤル」を併設。',
+        shops: ['・グローバル免税手続きセンター（全18窓口）', '・外商貴賓室「サロン・ド・ロイヤル」', '・御池美術画廊（日本画・陶芸特選）', '・外貨両替機・インターナショナルATM']
+      },
+      '6F': {
+        num: '6F',
+        title: '本館レストラン街・老舗京料理・特別食堂',
+        cat: '伝統会席・老舗料亭・フレンチ・甘味',
+        desc: '観光で訪れた国内外のお客様が本物の日本料理を味わえる老舗料亭の支店や、創業時からの味を受け継ぐ洋食特別食堂。大理石の重厚なエントランスが迎えます。',
+        shops: ['・京料理 老舗料亭「瓢亭 御池」', '・御池特別食堂「ル・サロン」', '・江戸前 鮨処「銀鱗」', '・老舗茶舗甘味処「一保堂サロン」']
+      },
+      '5F': {
+        num: '5F',
+        title: '伝統工芸・特選呉服・和装・漆器・茶道具',
+        cat: '人間国宝工芸・京友禅・西陣織・美術工芸',
+        desc: '創業112年の誇りを象徴する特撰呉服サロン。人間国宝による友禅着物や西陣織の名品、本漆器、茶道道具が一堂に並び、地元の老舗旦那衆や家元に愛され続けています。',
+        shops: ['・御池特撰呉服サロン「千代田」', '・伝統工芸品ギャラリー「匠の技」', '・茶道道具・華道器サロン（家元御用達）', '・和装リメイク工房']
+      },
+      '4F': {
+        num: '4F',
+        title: 'ハイジュエリー＆プレシャスウォッチサロン',
+        cat: '世界最高峰スイス高級時計・ファインジュエリー',
+        desc: '世界三大時計（パテック フィリップ、ヴァシュロン・コンスタンタン、オーデマ ピゲ）からロレックス、カルティエまで、国内屈指の正規ブティックが並ぶラグジュアリーフロア。',
+        shops: ['・パテック フィリップ ブティック', '・ロレックス ブティック 御池（正規店）', '・カルティエ / ブルガリ 特撰サロン', '・スイス公認時計技師工房']
+      },
+      '3F': {
+        num: '3F',
+        title: 'インターナショナル・モード＆プレタポルテ',
+        cat: 'パリ・ミラノコレクション・高級婦人服',
+        desc: 'シャネル、ディオール、グッチ、プラダの最新ランウェイコレクションが揃うフロア。インバウンド富裕層と国内エグゼクティブで常に熱気を帯びています。',
+        shops: ['・CHANEL（シャネル）ブティック', '・DIOR（ディオール）ブティック', '・GUCCI / PRADA', '・パーソナルアテンダントサロン（通訳付）']
+      },
+      '2F': {
+        num: '2F',
+        title: 'ラグジュアリーメゾン・シューズ＆レザー',
+        cat: '世界屈指のフラッグシップメゾン',
+        desc: 'ルイ・ヴィトン、エルメスをはじめとするメゾンの国内最大級フロア。本館の歴史的建築美と調和した重厚な空間で、限定バッグやレザー小物が並びます。',
+        shops: ['・LOUIS VUITTON（ルイ・ヴィトン）御池店', '・HERMÈS（エルメス）ブティック', '・マノロ ブラニク / クリスチャン ルブタン', '・多言語コンシェルジュラウンジ']
+      },
+      '1F': {
+        num: '1F',
+        title: 'グランドコンコース・コスメティック＆フレグランス',
+        cat: '大理石回廊・世界のデパコス・免税特設ステーション',
+        desc: '国登録有形文化財の荘厳な吹き抜け大理石コンコース。世界最高峰のコスメ・香水ブランドがずらりと並び、国内外の買い物客で一日中大盛況を見せています。',
+        shops: ['・CHANEL / DIOR / YSL コスメ', '・SK-II / 資生堂 / クレ・ド・ポー ボーテ', '・特選フレグランス（ル ラボ・ディプティック）', '・正面案内所・多言語通訳デスク']
+      },
+      'B1F': {
+        num: 'B1F',
+        title: '伝統銘菓・京名産・デパ地下「御池ごちそう回廊」',
+        cat: '老舗和菓子・漬物・宇治茶・日本酒・洋菓子',
+        desc: '国内外の旅行客がお土産を買い求める熱気溢れるフロア。創業数百年の和菓子処から、免税対応の日本酒セラー、限定洋菓子までが勢揃い。',
+        shops: ['・老舗和菓子処（とらや・鶴屋吉信・末富）', '・宇治銘茶「一保堂・祇園辻利」', '・京都伝統漬物処（西利・大安）', '・日本の銘酒セラー「SAKE OIKE」']
+      }
+    };
+
+    function showOikeFloor(fl) {
+      const d = oikeFloors[fl];
+      if (!d) return;
+      document.getElementById('of-num').innerText = d.num;
+      document.getElementById('of-title').innerText = d.title;
+      document.getElementById('of-cat').innerText = d.cat;
+      document.getElementById('of-desc').innerText = d.desc;
+
+      const ul = document.getElementById('of-shops');
+      ul.innerHTML = '';
+      d.shops.forEach(s => {
+        const li = document.createElement('li');
+        li.innerText = s;
+        ul.appendChild(li);
+      });
+
+      document.querySelectorAll('.floor-btn').forEach(btn => {
+        if (btn.innerText.startsWith(fl)) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    function calcTaxFree() {
+      const val = parseInt(document.getElementById('tf-amount').value, 10);
+      // Tax is 10/110 of gross, minus 1.55% fee
+      const taxAmount = Math.round(val * 10 / 110);
+      const fee = Math.round(val * 0.0155);
+      const refund = taxAmount - fee;
+      document.getElementById('tf-refund').innerText = '¥' + refund.toLocaleString();
+    }
+  </script>
+</body>
+</html>
